@@ -24,16 +24,22 @@ const useQuiz = (
 		quizzes[quizNumber - 1];
 
 	const [answers, setAnswers] = useState<string[]>([]);
+	const [modalButtonText, setModalButtonText] = useState("다음 문항");
 
 	useEffect(() => {
 		setAnswers(
 			[correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5)
 		);
+		if (quizNumber === quizzes.length) setModalButtonText("결과 보기");
 	}, [quizNumber]);
 
 	const moveToNextPage = () => {
-		if (quizNumber === quizzes.length) navigate("/result");
-		else navigate("/quiz", { state: { quizNumber: quizNumber + 1, quizzes } });
+		if (quizNumber === quizzes.length) {
+			const end = Date.now();
+			localStorage.setItem("end", String(end));
+			navigate("/result");
+		} else
+			navigate("/quiz", { state: { quizNumber: quizNumber + 1, quizzes } });
 	};
 
 	const onClickAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -56,6 +62,7 @@ const useQuiz = (
 		onClickAnswer,
 		moveToNextPage,
 		isCorrect,
+		modalButtonText,
 	};
 };
 

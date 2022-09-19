@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import useQuiz from "../pages/useQuiz";
 
 interface Props {
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	isCorrect: boolean;
 	moveToNextPage: () => void;
 }
-function Modal({ setIsModalOpen, isCorrect, moveToNextPage }: Props) {
+function Modal({ setIsModalOpen, isCorrect }: Props) {
+	const { modalButtonText, moveToNextPage } = useQuiz(setIsModalOpen);
 	const handleNextClick = () => {
 		setIsModalOpen(false);
 		moveToNextPage();
@@ -27,7 +29,7 @@ function Modal({ setIsModalOpen, isCorrect, moveToNextPage }: Props) {
 						</div>
 					)}
 				</div>
-				<button onClick={handleNextClick}>다음 문항</button>
+				<button onClick={handleNextClick}>{modalButtonText}</button>
 			</Content>
 		</Background>
 	);
