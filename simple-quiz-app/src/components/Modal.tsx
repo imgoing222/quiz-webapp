@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useQuiz from "../pages/useQuiz";
+import useQuiz from "../pages/quiz/useQuiz";
 
 interface Props {
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;

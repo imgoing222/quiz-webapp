@@ -1,6 +1,3 @@
-import { render } from "@testing-library/react";
-import Quiz from "../Quiz";
-
 test("무엇을 테스트할까", async () => {
 	// 4개의 답안이 있는가?
 	// 답안을 누를 시 모달이 열리는가?

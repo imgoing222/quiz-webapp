@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Quiz } from "../types/quiz";
+import { Quiz } from "../../types/quiz";
 
 interface RouteState {
 	state: {

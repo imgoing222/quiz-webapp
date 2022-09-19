@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { Container } from "../components/Container";
-import { Title } from "../components/Title";
+import { Container } from "../../components/Container";
+import { Title } from "../../components/Title";
 import useHome from "./useHome";
 
 function Home() {

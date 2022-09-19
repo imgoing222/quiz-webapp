@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
-import Home from "../Home";
-import Quiz from "../Quiz";
+import Home from "../pages/home/Home";
+import Quiz from "../pages/quiz/Quiz";
 
 test("Home에서 퀴즈 시작 버튼 클릭 시 퀴즈 페이지로 넘어가는가?", async () => {
 	render(
