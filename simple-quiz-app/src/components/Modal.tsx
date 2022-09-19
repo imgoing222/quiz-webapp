@@ -18,18 +18,18 @@ function Modal({ setIsModalOpen, isCorrect }: Props) {
 			<Content>
 				<div>
 					{isCorrect ? (
-						<div>
+						<Result>
 							<p>O</p>
 							<p>정답입니다</p>
-						</div>
+						</Result>
 					) : (
-						<div>
+						<Result>
 							<p>X</p>
 							<p>오답입니다</p>
-						</div>
+						</Result>
 					)}
 				</div>
-				<button onClick={handleNextClick}>{modalButtonText}</button>
+				<Button onClick={handleNextClick}>{modalButtonText}</Button>
 			</Content>
 		</Background>
 	);
@@ -50,9 +50,24 @@ const Background = styled.div`
 `;
 
 const Content = styled.div`
-	height: 70%;
+	height: 30%;
 	width: 70%;
-	margin-top: 70px;
 	position: relative;
-	background: #eeeeee;
+	border: 0.5px solid #ababab;
+	background: rgba(0, 0, 0, 0.9);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+`;
+
+const Result = styled.div`
+	color: white;
+`;
+
+const Button = styled.button`
+	font-size: 1rem;
+	padding: 0.5rem 0.7rem;
+	width: 60%;
+	cursor: pointer;
 `;

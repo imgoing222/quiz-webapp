@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import styled from "styled-components";
 import Answer from "../components/Answer";
+import { Container } from "../components/Container";
 import Modal from "../components/Modal";
+import { Title } from "../components/Title";
 import useModal from "../hooks/useModal";
 import ModalPortal from "../Portal";
 import useQuiz from "./useQuiz";
@@ -17,9 +19,9 @@ function Quiz() {
 	} = useQuiz(setIsModalOpen);
 
 	return (
-		<>
-			<h1>Quiz {quizNumber}</h1>
-			<h2>{question}</h2>
+		<Container>
+			<Title>Quiz {quizNumber}</Title>
+			<Question>{question}</Question>
 			{answers.map((answer, idx) => (
 				<Answer text={answer} key={idx} onClickAnswer={onClickAnswer} />
 			))}
@@ -32,8 +34,13 @@ function Quiz() {
 					/>
 				)}
 			</ModalPortal>
-		</>
+		</Container>
 	);
 }
+
+const Question = styled.p`
+	font-size: 1.2rem;
+	word-break: break-all;
+`;
 
 export default Quiz;
