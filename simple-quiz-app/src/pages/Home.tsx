@@ -1,17 +1,12 @@
-import { Link } from "react-router-dom";
 import useHome from "./useHome";
 
 function Home() {
-	const quizzes = useHome();
+	const { quizzes, startQuiz } = useHome();
 
 	return (
 		<>
 			<h1>Home</h1>
-			{quizzes && (
-				<Link to="/quiz" state={{ quizNumber: 1, quizzes }}>
-					퀴즈 시작
-				</Link>
-			)}
+			{quizzes && <button onClick={startQuiz}>퀴즈 시작</button>}
 		</>
 	);
 }
