@@ -108,7 +108,7 @@ jest.mock("react-router-dom", () => ({
 	useNavigate: () => mockedUsedNavigate,
 }));
 
-describe("quiz 페이지가 올바로 작동하는가?", () => {
+describe("quiz 페이지가 렌더링 되는가?", () => {
 	render(<Quiz />);
 
 	test("4개의 답안이 있는가?", async () => {

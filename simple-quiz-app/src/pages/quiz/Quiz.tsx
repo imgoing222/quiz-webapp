@@ -20,7 +20,7 @@ function Quiz() {
 
 	return (
 		<Container>
-			<Title>Quiz {quizNumber}</Title>
+			<Title data-testid="quizTitle">Quiz {quizNumber}</Title>
 			<Question>{question}</Question>
 			{answers.map((answer, idx) => (
 				<Answer text={answer} key={idx} onClickAnswer={onClickAnswer} />

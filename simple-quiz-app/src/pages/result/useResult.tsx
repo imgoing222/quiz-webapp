@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const useResult = () => {
+	const navigate = useNavigate();
+
 	const start = Number(localStorage.getItem("start"));
 	const end = Number(localStorage.getItem("end"));
 
@@ -10,7 +14,11 @@ const useResult = () => {
 	const corrects = localStorage.getItem("corrects");
 	const wrongs = localStorage.getItem("wrongs");
 
-	return { corrects, wrongs, seconds, minutes };
+	const moveToHome = () => {
+		navigate("/");
+	};
+
+	return { corrects, wrongs, seconds, minutes, moveToHome };
 };
 
 export default useResult;

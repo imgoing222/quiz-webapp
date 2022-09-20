@@ -1,24 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter } from "react-router-dom";
 import Home from "../pages/home/Home";
-import Quiz from "../pages/quiz/Quiz";
 
-test("Home에서 퀴즈 시작 버튼 클릭 시 퀴즈 페이지로 넘어가는가?", async () => {
-	render(
-		<MemoryRouter>
-			<Routes>
-				<Route path={"/"} element={<Home />}></Route>
-				<Route path={"/quiz"} element={<Quiz />}></Route>
-			</Routes>
-		</MemoryRouter>
-	);
+test("Home의 타이틀과 퀴즈 시작 버튼이 렌더링 되는가?", async () => {
+	render(<Home />, { wrapper: BrowserRouter });
 	expect(screen.getByText(/Quiz App/i)).toBeInTheDocument();
 	await screen.findByTestId("startButton");
 	const startButton = screen.getByTestId("startButton");
-	userEvent.click(startButton);
-	expect(screen.getByText(/Quiz/i)).toBeInTheDocument();
+	expect(startButton).toBeInTheDocument();
 });
 
 export {};
