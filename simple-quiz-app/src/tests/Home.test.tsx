@@ -14,8 +14,10 @@ test("Home에서 퀴즈 시작 버튼 클릭 시 퀴즈 페이지로 넘어가�
 			</Routes>
 		</MemoryRouter>
 	);
-	expect(screen.getByText(/Home/i)).toBeInTheDocument();
-	userEvent.click(screen.getByText(/퀴즈 시작/i));
+	expect(screen.getByText(/Quiz App/i)).toBeInTheDocument();
+	await screen.findByTestId("startButton");
+	const startButton = screen.getByTestId("startButton");
+	userEvent.click(startButton);
 	expect(screen.getByText(/Quiz/i)).toBeInTheDocument();
 });
 

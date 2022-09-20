@@ -6,7 +6,11 @@ interface Props {
 }
 
 function Answer({ text, onClickAnswer }: Props) {
-	return <AnswerButton onClick={onClickAnswer}>{text}</AnswerButton>;
+	return (
+		<AnswerButton data-testid="answer" onClick={onClickAnswer}>
+			{text}
+		</AnswerButton>
+	);
 }
 
 const AnswerButton = styled.button`
