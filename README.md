@@ -41,6 +41,13 @@ src
  ┗ setupTests.ts
  ```
  
+사용기술
+- React
+- TypeScript
+- styled-component
+- react-router
+- jest, react-testing-library
+
 ### 요구사항
 ----
 **[필수 구현]**
