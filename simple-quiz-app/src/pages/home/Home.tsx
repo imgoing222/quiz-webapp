@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { Container } from "../components/Container";
-import { Title } from "../components/Title";
+import { Container } from "../../components/Container";
+import { Title } from "../../components/Title";
 import useHome from "./useHome";
 
 function Home() {
@@ -10,7 +10,11 @@ function Home() {
 	return (
 		<Container>
 			<Title>Quiz App</Title>
-			{quizzes && <Button onClick={startQuiz}>퀴즈 시작</Button>}
+			{quizzes && (
+				<Button data-testid="startButton" onClick={startQuiz}>
+					퀴즈 시작
+				</Button>
+			)}
 		</Container>
 	);
 }

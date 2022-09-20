@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Quiz } from "../types/quiz";
+import { Quiz } from "../../types/quiz";
 import { useNavigate } from "react-router-dom";
 
 const URL =

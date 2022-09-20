@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Answer from "../components/Answer";
-import { Container } from "../components/Container";
-import Modal from "../components/Modal";
-import { Title } from "../components/Title";
-import useModal from "../hooks/useModal";
-import ModalPortal from "../Portal";
+import Answer from "../../components/Answer";
+import { Container } from "../../components/Container";
+import Modal from "../../components/Modal";
+import { Title } from "../../components/Title";
+import useModal from "../../hooks/useModal";
+import ModalPortal from "../../utils/Portal";
 import useQuiz from "./useQuiz";
 
 function Quiz() {
@@ -20,7 +20,7 @@ function Quiz() {
 
 	return (
 		<Container>
-			<Title>Quiz {quizNumber}</Title>
+			<Title data-testid="quizTitle">Quiz {quizNumber}</Title>
 			<Question>{question}</Question>
 			{answers.map((answer, idx) => (
 				<Answer text={answer} key={idx} onClickAnswer={onClickAnswer} />
