@@ -4,7 +4,43 @@
 cd simple-quiz-app
 npm start
 ```
-
+폴더 구조
+```
+src  
+ ┣ apis  
+ ┃ ┗ .gitkeep  
+ ┣ components  
+ ┃ ┣ Answer.tsx  
+ ┃ ┣ Container.tsx  
+ ┃ ┣ Modal.tsx  
+ ┃ ┗ Title.tsx  
+ ┣ hooks  
+ ┃ ┗ useModal.tsx  
+ ┣ pages  
+ ┃ ┣ home  
+ ┃ ┃ ┣ Home.tsx  
+ ┃ ┃ ┗ useHome.tsx  
+ ┃ ┣ quiz  
+ ┃ ┃ ┣ Quiz.tsx  
+ ┃ ┃ ┗ useQuiz.tsx  
+ ┃ ┗ result  
+ ┃ ┃ ┣ Result.tsx  
+ ┃ ┃ ┗ useResult.tsx  
+ ┣ tests  
+ ┃ ┣ Home.test.tsx  
+ ┃ ┣ Quiz.test.tsx  
+ ┃ ┗ Result.test.tsx  
+ ┣ types  
+ ┃ ┗ quiz.ts  
+ ┣ utils  
+ ┃ ┗ Portal.ts  
+ ┣ App.tsx  
+ ┣ index.tsx  
+ ┣ react-app-env.d.ts  
+ ┣ reportWebVitals.ts  
+ ┗ setupTests.ts
+ ```
+ 
 ### 요구사항
 ----
 **[필수 구현]**
